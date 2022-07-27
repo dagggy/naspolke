@@ -1,7 +1,7 @@
 import {Typography, IconButton, Card, makeStyles, ButtonBase, Grid} from '@material-ui/core';
 import {Box, CardHeader} from "@mui/material";
 import { Link } from "react-router-dom";
-import { getCompanies } from "../handlers/CompanyDataHandler";
+import { useGetCompanies } from "../handlers/CompanyDataHandler";
 
 function MainCockpitPage () {
 
@@ -19,7 +19,7 @@ function MainCockpitPage () {
 
     function PlaceCompanyCards () {
         const items = [];
-        const companies = getCompanies();
+        const companies = useGetCompanies();
 
         companies.forEach( company => {
             items.push(

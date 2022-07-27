@@ -1,3 +1,5 @@
+import useAxiosPrivate from "../../../hooks/useAxiosPrivate";
+
 const companies =  [
         {'companyId':'fajeif04i1', 'companyName':"spółka 1", 'krsNumber': '0000123456',
             'address':'goleniowska 1 goleniów', 'nip':'123451245512', 'regon':'1231513',
@@ -36,7 +38,15 @@ const companies =  [
 
     ]
 
-function getCompanies () {
+
+
+function useGetCompanies () {
+    const axiosPrivate = useAxiosPrivate();
+    axiosPrivate.post("/get-companies")
+        .then(res => {
+                console.log(res)
+            }
+        )
     return companies;
 }
 
@@ -58,4 +68,4 @@ function selectCompanyInfoById (id, info) {
     return null;
 }
 
-export {getCompanies, getCompanyById, selectCompanyInfoById};
+export {useGetCompanies, getCompanyById, selectCompanyInfoById};

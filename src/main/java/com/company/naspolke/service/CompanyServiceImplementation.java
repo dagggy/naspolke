@@ -15,6 +15,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 @Slf4j
 @RequiredArgsConstructor
@@ -93,5 +94,10 @@ public class CompanyServiceImplementation implements CompanyService {
     public List<Company> findAll()
     {
         return companyRepository.findAll();
+    }
+
+    @Override
+    public List<Company> getCompaniesByUserId(UUID uuid) {
+        return companyRepository.findByUserId(uuid);
     }
 }
