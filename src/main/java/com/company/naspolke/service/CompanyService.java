@@ -16,5 +16,4 @@ public interface CompanyService {
     boolean checkForDuplicate(Long krsNumber);
     Company saveCompany(Company company);
     ResponseEntity<String> buildSaveResponse(Company company);
-    public List<Company> getCompaniesByUserId (UUID uuid);
 }

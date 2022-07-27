@@ -15,6 +15,4 @@ public interface CompanyRepository extends JpaRepository<Company, UUID> {
 
     @RestResource(path = "all")
     List<Company> findBy();
-
-    List<Company> findByUserId(UUID uuid);
 }

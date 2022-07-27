@@ -94,13 +94,7 @@ public class CompanyServiceImplementation implements CompanyService {
         return Optional.ofNullable(companyRepository.findByCompanyId(companyId));
     }
 
-    @Override
     public List<Company> findAll() {
         return companyRepository.findAll();
-    }
-
-    @Override
-    public List<Company> getCompaniesByUserId(UUID uuid) {
-        return companyRepository.findByUserId(uuid);
     }
 }
