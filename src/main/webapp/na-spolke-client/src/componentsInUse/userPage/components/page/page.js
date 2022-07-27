@@ -17,7 +17,7 @@ import InviteFail from "../../content/companyContent/inviteResult/InviteFail";
 import GenerateDocument from "../../content/companyContent/generateDocument/GenerateDocument";
 import RequestJoin from "../../content/companyContent/joinable/RequestJoin";
 import AddCompany from "../../../addCompany/AddCompany";
-
+import RequestForMembership from "../../../requestToCompany/RequestForMembership";
 
 
 
@@ -33,6 +33,7 @@ function Page ({classes}) {
                 <Route path="/" element={<Subpage component={<MainCockpitPage/>}/>}/>
                 <Route path="/join" element={<Subpage component={<RequestJoin/>}/>}/>
                 <Route path="/add" element={<Subpage component={<AddCompany/>}/>}/>
+                {/*<Route path="/request-for-membership" element={<RequestForMembership/>}/>*/}
                 <Route path="/company/:companyId/*">
                     <Route path="" element={<Subpage component={<CompanyInfo />}/>}/>
                     <Route path="members" element={<Subpage component={<CompanyMembers/>}/>}/>

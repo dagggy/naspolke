@@ -63,8 +63,9 @@ const Login = () => {
             togglePersist(checkboxRef.current);
             navigate(from, { replace: true });
         } catch (err) {
-            // console.log(err);
+            console.log(err);
             if (!err?.response) {
+                console.log(err);
                 setErrMsg('Brak odpowiedzi serwera');
             } else if (err.response?.status === 400) {
                 setErrMsg('Nie podano adresu e-mail lub hasła');
@@ -78,11 +79,10 @@ const Login = () => {
     }
 
     const togglePersist = (target) => {
-        console.log("toggle ", target.checked);
+        // console.log("toggle ", target.checked);
         localStorage.setItem("persist", target.checked);
         setPersist(target.checked);
-        console.log(persist);
-        // setPersist(prev => !prev);
+        // console.log(persist);
     }
 
     let password;
@@ -212,6 +212,7 @@ const Login = () => {
             </Flex>
             {/*</section>*/}
         </ChakraProvider>
+
     )
 }
 
